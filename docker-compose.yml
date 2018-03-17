@@ -1,0 +1,20 @@
+version: '3'
+services:
+  ingress:
+    image: geosocio/ingress
+    links:
+      - api
+      - web
+    environment:
+      VIRTUAL_HOST: boggs.love,origin.boggs.love,www.boggs.love
+      LETSENCRYPT_HOST: boggs.love,origin.boggs.love,www.boggs.love`
+  api:
+    image: boggs/api
+    env_file:
+      - .env
+  web:
+    image: boggs/web
+    env_file:
+      - .env
+    links:
+      - api
