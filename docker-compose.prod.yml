@@ -7,6 +7,9 @@ services:
       - ingress
   api:
     restart: always
+    networks:
+      - default
+      - database 
   web:
     restart: always
 networks:
