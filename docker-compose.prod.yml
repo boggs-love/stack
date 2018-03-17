@@ -13,3 +13,6 @@ networks:
   ingress:
     external:
       name: ingress
+  database:
+    external:
+      name: database
