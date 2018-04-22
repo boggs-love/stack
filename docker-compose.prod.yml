@@ -9,7 +9,13 @@ services:
     restart: always
     networks:
       - default
-      - database 
+      - database
+      - messenger
+  mailer:
+    restart: always
+    networks:
+      - default
+      - messenger
   web:
     restart: always
 networks:
@@ -19,3 +25,6 @@ networks:
   database:
     external:
       name: database
+  messenger:
+    external:
+      name: messenger
