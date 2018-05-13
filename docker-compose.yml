@@ -18,7 +18,3 @@ services:
       - .env
     links:
       - api
-  mailer:
-    image: boggs/mailer
-    env_file:
-      - .env
